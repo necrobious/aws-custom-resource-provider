@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "aws-custom-resource-provider-events",
+    "aws-custom-resource-provider-lambda",
+    "aws-custom-resource-provider-example"
+]
