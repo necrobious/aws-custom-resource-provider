@@ -5,21 +5,21 @@ edition = "2021"
 
 [dependencies]
 tokio = { version = "1", features = ["macros"] }
-lambda_runtime = "0.5.1"
+lambda_runtime = "0.7.1"
 #service_fn = { path = "../../service_fn" }
 service_fn = { git = "https://github.com/necrobious/service_fn.git", branch = "main" }
 serde = "^1"
 serde_json = "^1"
 serde_derive = "^1"
-aws-config = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.14.0" }
-aws-endpoint = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.14.0" }
-aws-sdk-ssm = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.14.0" }
-aws-sdk-s3 = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v0.14.0" }
-hyper = { version = "0.14.19" } # match tower version used by 'aws-sdk'
-hyper-rustls  = { version = "0.22.1" } # match tower version used by 'aws-sdk'
+aws-config = { version = "0.51.0" }
+aws-endpoint = { version = "0.51.0" }
+aws-sdk-ssm = { version = "0.21.0" }
+aws-sdk-s3 = { version = "0.21.0" }
+hyper = { version = "0.14.20" } # match tower version used by 'aws-sdk'
+hyper-rustls  = { version = "0.23.0" } # match tower version used by 'aws-sdk'
 ring = { version = "0.16.20" } # match tower version used by 'aws-sdk'
 tracing = { version = "0.1", features = ["log"] }
 tracing-subscriber = { version = "0.3", default-features = false, features = ["fmt"] }
 aws-custom-resource-provider-events = { path = "../aws-custom-resource-provider-events" }
 aws-custom-resource-provider-lambda = { path = "../aws-custom-resource-provider-lambda" }
-async-trait = "0.1.56"
+async-trait = "0.1.58"
