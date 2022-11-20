@@ -43,8 +43,14 @@ where
         }
     }
     pub fn new(provider: P) -> HandlerConfig<P> {
-        let client: Client = hyper::Client::builder()
-            .build(hyper_rustls::HttpsConnector::with_native_roots());
+        let https = hyper_rustls::HttpsConnectorBuilder::new()
+            .with_native_roots()
+            .https_only()
+            .enable_http1()
+            .enable_http2()
+            .build();
+
+        let client: Client = hyper::Client::builder().build(https);
         HandlerConfig::new_with_client(provider,client)
     }
 }

@@ -8,10 +8,10 @@ tokio = { version = "1", features = ["macros"] }
 tracing = { version = "0.1", features = ["log"] }
 tracing-subscriber = { version = "0.3", default-features = false, features = ["fmt"] }
 async-trait = "0.1.56"
-lambda_runtime = "0.5.1"
+lambda_runtime = "0.7.1"
 serde = "^1"
 serde_json = "^1"
 serde_derive = "^1"
-hyper = { version = "0.14.19" } # match tower version used by 'aws-sdk'
-hyper-rustls  = { version = "0.22.1" } # match tower version used by 'aws-sdk'
+hyper = { version = "0.14.20" } # match tower version used by 'aws-sdk'
+hyper-rustls  = { version = "0.23.0", features =["http1","http2"]} # match tower version used by 'aws-sdk'
 aws-custom-resource-provider-events = { path = "../aws-custom-resource-provider-events" }
