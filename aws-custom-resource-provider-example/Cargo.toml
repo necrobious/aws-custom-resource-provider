@@ -5,7 +5,7 @@ edition = "2021"
 
 [dependencies]
 tokio = { version = "1", features = ["macros"] }
-lambda_runtime = "0.7.1"
+lambda_runtime = "0.7"
 #service_fn = { path = "../../service_fn" }
 service_fn = { git = "https://github.com/necrobious/service_fn.git", branch = "main" }
 serde = "^1"

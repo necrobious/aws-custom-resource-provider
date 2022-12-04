@@ -76,7 +76,7 @@ where
     
     let request = event.payload;
 
-    let response_url = request.get("RequestType")
+    let response_url = request.get("ResponseURL")
         .and_then(|v| v.as_str())
         .ok_or( Error::InvalidResponseURI() )
         .and_then(|s|

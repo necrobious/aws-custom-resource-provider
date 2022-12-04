@@ -332,6 +332,23 @@ pub struct ProviderResponseBuilder {
 }
 
 impl ProviderResponseBuilder {
+    pub fn from_event_ref <T> (event:&T) -> Self where T: ProviderRequestEventDetails {
+        let physical_resource_id = build_physical_resource_id(
+            event.stack_id().clone(),
+            event.logical_resource_id().clone(),
+        );
+ 
+        ProviderResponseBuilder {
+            status: ResponseStatus::Failed,
+            reason: "reason not given".to_string(),
+            physical_resource_id: physical_resource_id,
+            stack_id: event.stack_id().clone(),
+            request_id: event.request_id().clone(),
+            logical_resource_id: event.logical_resource_id().clone(),
+            no_echo: false,
+            data: None as Option<Value>,
+        }
+    }
     pub fn from_event <T> (event:T) -> Self where T: ProviderRequestEventDetails {
         let physical_resource_id = build_physical_resource_id(
             event.stack_id(),
